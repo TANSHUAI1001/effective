@@ -1,0 +1,29 @@
+package LeetCode;
+
+import java.util.*;
+
+/**
+ * Created by shuai on 2017/2/5.
+ */
+public class Test {
+    public static void main(String args[]){
+//        Map<Integer,Integer> map = new HashMap<>();
+//        int sum = 0;
+//        map.put(3,0);
+//        map.put(0,4);
+//        System.out.println(map.getOrDefault(sum,0));
+
+        // collection.toArray()
+        String result = "China,Guangdong,Guangzhou";
+        char[]x = result.toCharArray();
+        System.out.println(Arrays.toString(x));
+
+        List<String> s = new LinkedList<>();
+        s.add("China");
+        s.add("Guangdong");
+        s.add("Guangzhou");
+        String[] r = s.toArray(new String[0]);
+        System.out.println(Arrays.toString(r));
+
+    }
+}
