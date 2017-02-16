@@ -21,6 +21,10 @@ public class removeInvalidParenthesesSolution {
         String s2 = ")(";
         List<String> list2 = removeInvalidParentheses(s2);
         System.out.println(Arrays.toString(list2.toArray()));
+
+        String s3 = ")()1()2()(0)))(())))9()()()(";
+        List<String> list3 = removeInvalidParentheses(s3);
+        System.out.println(Arrays.toString(list3.toArray()));
     }
     public static List<String> removeInvalidParentheses(String s) {
         List<String> ans = new ArrayList<>();
