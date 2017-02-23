@@ -5,7 +5,7 @@ package bases;
  */
 public class Parent {
     public static void main(String args[]){
-        Child c = new Child();
+        Parent c = new Child();
         System.out.println(c.getX()); // 5
     }
     private int x = 3;

@@ -1,0 +1,15 @@
+/**196. Delete Duplicate Emails
+ */
+
+/**
+不能select 出来然后更新，必须经过中间表（ita）
+ */
+DELETE FROM person WHERE Id in (
+SELECT Id FROM
+(SELECT p2.id FROM person p1 LEFT JOIN person p2 on p1.email = p2.email and p1.Id < p2.id) ita
+);
+
+DELETE p1
+FROM Person p1, Person p2
+WHERE p1.Email = p2.Email AND
+p1.Id > p2.Id
