@@ -1,10 +1,8 @@
 package bases.Traversing;
 
-import LeetCode.TreeNode;
+import leetcode.TreeNode;
 
-import java.util.Queue;
 import java.util.Stack;
-import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by shuai on 2017/2/7.

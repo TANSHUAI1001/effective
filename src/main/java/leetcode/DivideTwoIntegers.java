@@ -1,6 +1,4 @@
-package LeetCode;
-
-import java.util.Map;
+package leetcode;
 
 /**
  * Created by shuai on 2017/2/23.

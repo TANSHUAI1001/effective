@@ -1,6 +1,6 @@
 package bases.Traversing;
 
-import LeetCode.TreeNode;
+import leetcode.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

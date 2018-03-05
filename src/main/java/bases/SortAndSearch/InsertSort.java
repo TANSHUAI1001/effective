@@ -1,9 +1,6 @@
 package bases.SortAndSearch;
 
-import LeetCode.ListNode;
-
-import java.util.Arrays;
-import java.util.List;
+import leetcode.ListNode;
 
 /**
  * Created by shuai on 2017/2/7.

@@ -3,5 +3,5 @@
 
 [牛客网](https://www.nowcoder.com/)
 
-[LeetCode](https://leetcode.com)
+[leetcode](https://leetcode.com)
 [LeetCode中文](https://cn.leetcode.com/)

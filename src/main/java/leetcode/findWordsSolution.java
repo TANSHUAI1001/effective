@@ -1,4 +1,4 @@
-package LeetCode;
+package leetcode;
 
 import java.util.*;
 import java.util.function.IntFunction;

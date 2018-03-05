@@ -1,6 +1,4 @@
-package LeetCode;
-
-import java.util.Arrays;
+package leetcode;
 
 /**
  * Created by shuai on 2017/2/28.

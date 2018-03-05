@@ -1,4 +1,4 @@
-package LeetCode.SomeCompany;
+package leetcode.SomeCompany;
 
 /**
  * Created by shuai on 2017/2/20.
