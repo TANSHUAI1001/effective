@@ -1,6 +1,8 @@
 package LeetCode;
 
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by shuai on 2017/2/5.
@@ -24,6 +26,10 @@ public class Test {
         s.add("Guangzhou");
         String[] r = s.toArray(new String[0]);
         System.out.println(Arrays.toString(r));
+        Logger logger = Logger.getLogger("test");
+        logger.log(Level.INFO,"什么情况");
+        logger.info("没有其他的函数了");
+
 
     }
 }
