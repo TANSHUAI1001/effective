@@ -19,6 +19,7 @@ public class B
     public static void main(String[] args)
     {
         B t = new B();
+        System.out.println(AccountType.CURRENT);
         //构造块
         //构造块
         //静态块
