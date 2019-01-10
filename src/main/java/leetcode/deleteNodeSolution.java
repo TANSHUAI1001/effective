@@ -1,6 +1,6 @@
 package leetcode;
 
-import bases.Traversing.BFSTraversing;
+import bases.traversing.BFSTraversing;
 
 /**
  * Created by shuai on 2017/2/16.

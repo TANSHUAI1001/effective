@@ -3,6 +3,7 @@ package analysis;
 import java.math.BigDecimal;
 
 /**
+ * 大数相乘
  * Created by shuai on 2017/2/23.
  */
 public class LargeIntegerMultiplication {
