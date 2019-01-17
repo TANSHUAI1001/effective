@@ -3,6 +3,7 @@ package bases.sortsearch;
 import java.util.Arrays;
 
 /**
+ * 选择排序
  * Created by shuai on 2017/2/7.
  */
 public class SelectSort {

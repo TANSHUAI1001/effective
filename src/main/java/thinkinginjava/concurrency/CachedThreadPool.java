@@ -16,7 +16,10 @@ public class CachedThreadPool {
 //            exec.execute(new LiftOff());
             Future future = exec.submit(new LiftOff()); // 返回值Future
             try {
-                Object object1 = future.get(); // Waits if necessary for the computation to complete, and then retrieves its result.
+                // Future未完成之前，get()将会被阻塞，直至结果准备就绪
+                Object object1 = future.get();
+                // Waits if necessary for the computation to complete, and then retrieves its result.
+
 //                Object object2 = future.get(1, TimeUnit.MICROSECONDS);
                 // Waits if necessary for at most the given time for the computation to complete, and then retrieves its result, if available.
                 System.out.println(object1); // runnable 无返回值，null

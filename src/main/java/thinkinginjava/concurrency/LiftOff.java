@@ -22,4 +22,11 @@ public class LiftOff implements Runnable {
             Thread.yield();
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println("waiting for lift off");
+        for (int i = 0; i < 5; i++)
+            new Thread(new LiftOff()).start();
+
+    }
 }

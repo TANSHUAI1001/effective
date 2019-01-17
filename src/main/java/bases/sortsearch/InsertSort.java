@@ -5,6 +5,7 @@ import leetcode.ListNode;
 import java.util.Arrays;
 
 /**
+ * 插入排序
  * Created by shuai on 2017/2/7.
  */
 public class InsertSort {
