@@ -1,4 +1,4 @@
-package core.stream;
+package core.iostream;
 
 /**
  * Created by shuai on 2018/3/22.

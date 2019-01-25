@@ -24,7 +24,7 @@ Java 9 发布于 2017 年 9 月 22 日，带来了很多新特性，其中最主
 
 **改进钻石操作符(Diamond Operator)** ：匿名类可以使用钻石操作符(Diamond Operator)。
 
-**改进 Optional 类**：java.util.Optional 添加了很多新的有用方法，Optional 可以直接转为 core.stream。
+**改进 Optional 类**：java.util.Optional 添加了很多新的有用方法，Optional 可以直接转为 core.iostream。
 
 **多分辨率图像 API**：定义多分辨率图像API，开发者可以很容易的操作和展示不同分辨率的图像了。
 

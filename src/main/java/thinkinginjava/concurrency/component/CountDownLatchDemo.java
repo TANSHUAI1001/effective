@@ -4,6 +4,10 @@ import java.util.concurrent.*;
 import java.util.*;
 import static net.mindview.util.Print.*;
 
+/**
+ * 等待TaskPortion并行执行完才并行执行WaitingTask
+ * Random.nextInt是线程安全的
+ */
 // Performs some portion of a task:
 class TaskPortion implements Runnable {
     private static int counter = 0;

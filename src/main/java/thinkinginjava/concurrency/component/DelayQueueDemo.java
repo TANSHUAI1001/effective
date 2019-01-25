@@ -18,6 +18,8 @@ class DelayedTask implements Runnable, Delayed {
                 NANOSECONDS.convert(delta, MILLISECONDS);
         sequence.add(this);
     }
+    // 希望使用的单位是作为unit参数传递进来的，使用它将当前时间与触发时间之间的差转换为调用者要求的单位，而无需知道这些单位是什么
+    // TODO 这是策略设计模式的一个简单的示例
     public long getDelay(TimeUnit unit) {
         return unit.convert(
                 trigger - System.nanoTime(), NANOSECONDS);
@@ -28,7 +30,14 @@ class DelayedTask implements Runnable, Delayed {
         if(trigger > that.trigger) return 1;
         return 0;
     }
-    public void run() { printnb(this + " "); }
+    public void run() {
+        printnb(this + " ");
+        try {
+            MILLISECONDS.sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        }
+    }
     public String toString() {
         return String.format("[%1$-4d]", delta) +
                 " Task " + id;

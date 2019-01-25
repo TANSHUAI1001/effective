@@ -4,6 +4,11 @@ import java.util.concurrent.*;
 import java.util.*;
 import net.mindview.util.*;
 
+/**
+ * 一个线程向缓冲区填入数据，一个线程消耗数据，
+ * *当它们都完成时*，相互交换缓冲区
+ * @param <T>
+ */
 class ExchangerProducer<T> implements Runnable {
   private Generator<T> generator;
   private Exchanger<List<T>> exchanger;

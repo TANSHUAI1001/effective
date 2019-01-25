@@ -1,4 +1,6 @@
-package core.stream;
+package core.iostream;
+
+import java.io.InputStream;
 
 /**
  * Created by shuai on 2018/3/22.

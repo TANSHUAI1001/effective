@@ -5,6 +5,10 @@ package thinkinginjava.concurrency.component;
 import java.util.concurrent.*;
 import java.util.*;
 
+/**
+ * 对象池，管理数量有限的对象，要使用时签出checkOut，使用完毕，将它们签回checkIn
+ * @param <T>
+ */
 public class Pool<T> {
   private int size;
   private List<T> items = new ArrayList<T>();

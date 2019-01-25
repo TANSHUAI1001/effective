@@ -114,6 +114,8 @@ public class PriorityBlockingQueueDemo {
         PriorityBlockingQueue<Runnable> queue =
                 new PriorityBlockingQueue<Runnable>();
         exec.execute(new PrioritizedTaskProducer(queue, exec));
+        // 第一个for循环未执行完，就执行Consumer会导致前几个Task有时候不是按优先级从高到低
+        TimeUnit.MILLISECONDS.sleep(100);
         exec.execute(new PrioritizedTaskConsumer(queue));
     }
 } /* (Execute to see output) *///:~

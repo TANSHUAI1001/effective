@@ -29,7 +29,7 @@ public class AboutStream {
      * <a href="http://www.runoob.com/java/java8-streams.html">Java 8 Stream</a>
      */
     public void runoob(){
-        // 生成流 stream() − 为集合创建串行流。parallelStream() − 为集合创建并行流。
+        // 生成流 iostream() − 为集合创建串行流。parallelStream() − 为集合创建并行流。
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl"
                 ,"abc", "", "bc", "efg", "abcd","", "jkl"
                 ,"abc", "", "bc", "efg", "abcd","", "jkl"

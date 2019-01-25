@@ -3,7 +3,7 @@ package leetcode;
 import java.util.*;
 import java.util.function.IntFunction;
 import java.util.stream.Stream;
-//import java.util.core.stream.Stream;
+//import java.util.core.iostream.Stream;
 
 /**
  * Created by shuai on 2017/2/8.
