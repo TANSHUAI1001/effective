@@ -22,7 +22,7 @@ public class GetChannel {
     fc = new FileInputStream("data.txt").getChannel();
     ByteBuffer buff = ByteBuffer.allocate(BSIZE);
     fc.read(buff);
-    buff.flip();
+    buff.flip(); // 位置从头开始，并将limit设为现有缓存大小，可用于遍历
     while(buff.hasRemaining())
       System.out.print((char)buff.get());
   }

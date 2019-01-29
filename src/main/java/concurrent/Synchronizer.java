@@ -1,5 +1,8 @@
 package concurrent;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.*;
 
@@ -188,5 +191,8 @@ public class Synchronizer {
 //        testSemaphore();
 //        testExchanger();
         testSynchronousQueue();
+        HashMap<String,Integer> map = new HashMap<>();
+        Map<String, Integer> smap = Collections.synchronizedMap(map);
+        ConcurrentHashMap<String,Integer> cmap = new ConcurrentHashMap<>();
     }
 }

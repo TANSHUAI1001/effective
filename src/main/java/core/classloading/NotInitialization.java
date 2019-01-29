@@ -11,5 +11,13 @@ public class NotInitialization {
 //        SuperClass[] sca = new SuperClass[10];// 定义数组不会触发初始化
 
 //        System.out.println(SuperClass.helloWorld);//常量在编译阶段会存入常量池，调用也不会触发初始化
+
+        SuperClass ss = new SubClass();
+        /*
+        super static init
+        subclass static init
+        super constructor init
+        subclass constructor init
+         *///:~执行顺序
     }
 }
