@@ -1,9 +1,5 @@
 package connpool;
 
-import ch.qos.logback.core.db.dialect.MySQLDialect;
-//import org.gjt.mm.mysql.Driver;
-import com.mysql.jdbc.Driver;
-
 import java.sql.*;
 
 /**
