@@ -1,7 +1,5 @@
 package analysis;
 
-import mycollection.MultiThread.Main;
-
 /**
  * Created by shuai on 2017/2/22.
  */

@@ -8,12 +8,12 @@ import java.util.Hashtable;
  */
 public class HashTableAndHashMap {
     public static void main(String[] args) {
-        HashMap<Object,Object> hm = new HashMap();
+        HashMap<Object,Object> hm = new HashMap<>();
         hm.put("s","shuai");
         System.out.println(hm.containsKey("s"));
         System.out.println(hm.containsValue("shuai"));
 
-        Hashtable ht = new Hashtable();
+        Hashtable<String,String> ht = new Hashtable<>();
         ht.put("t","tan");
         System.out.println(ht.contains("tan"));
         System.out.println(ht.containsKey("t"));
