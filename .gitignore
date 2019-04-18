@@ -1,4 +1,5 @@
 .idea/
+.settings/
 src/test/
 src/main/java/dlt/
 target/

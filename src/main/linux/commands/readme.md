@@ -1,0 +1,10 @@
+# [LinuxCommands](http://linuxcommand.org/index.php)
+
+# [Linux必学的60个命令](https://www.cnblogs.com/bindong/p/5789502.html)
+
+- 安装和登录命令：login、shutdown、halt、reboot、install、mount、umount、chsh、exit、last；
+- 文件处理命令：file、mkdir、grep、dd、find、mv、ls、diff、cat、ln；
+- 系统管理相关命令：df、top、free、quota、at、lp、adduser、groupadd、kill、crontab；
+- 网络操作命令：ifconfig、ip、ping、netstat、telnet、ftp、route、rlogin、rcp、finger、mail、 nslookup；
+- 系统安全相关命令：passwd、su、umask、chgrp、chmod、chown、chattr、sudo ps、who；
+- 其它命令：tar、unzip、gunzip、unarj、mtools、man、unendcode、uudecode。
