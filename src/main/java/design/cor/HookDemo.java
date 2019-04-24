@@ -1,5 +1,6 @@
-package design;
+package design.cor;
 
+// 抽象类不能实例化
 public abstract class HookDemo
 {
     public abstract void getData();
@@ -11,6 +12,7 @@ public abstract class HookDemo
 
     public abstract void displayData();
 
+    // 执行函数由抽象父类定义，流程由子类状态控制
     public void process()
     {
         getData();

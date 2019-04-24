@@ -1,6 +1,6 @@
-package design.COR;
+package design.cor;
 
-public class Client
+public class _Client
 {
 	public static void main(String args[])
 	{

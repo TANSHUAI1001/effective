@@ -1,4 +1,4 @@
-package design.COR;
+package design.cor;
 
 public class GeneralManager extends Leader
 {
