@@ -1,9 +1,13 @@
 package encryption;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 /**
  * @author shuaitan
  * 2019-07-20
  * 参考链接：https://blog.csdn.net/a344288106/article/details/80094878
+ * 参考文档：https://wenku.baidu.com/view/8d67d80178563c1ec5da50e2524de518964bd3b6.html
  */
 public class GmsslHash {
 
@@ -51,13 +55,6 @@ public class GmsslHash {
         return bytes[0] | bytes[1] | bytes[2] | bytes[3];
     }
 
-
-    // 初始值
-    private final static int[] IV = {
-            0x7380166F,0x4914B2B9,0x172442D7,0xDA8A0600,
-            0xA96F30BC,0x163138AA,0xE38DEE4D,0xB0FB0E4E
-    };
-
     // 常量
     private static int T(int i){
         if(i >= 0 && i <= 15){
@@ -100,6 +97,13 @@ public class GmsslHash {
         return X ^ LoopLeftShift(X, 15) ^ LoopLeftShift(X, 23);
     }
 
+
+    // 初始值
+    private int[] IV = {
+            0x7380166F,0x4914B2B9,0x172442D7,0xDA8A0600,
+            0xA96F30BC,0x163138AA,0xE38DEE4D,0xB0FB0E4E
+    };
+
     /**
      * 填充
      * 迭代压缩
@@ -108,7 +112,7 @@ public class GmsslHash {
      * 3. 压缩函数
       */
 
-    private static void SM3ProcessMessageBlock(int[] word){
+    private void SM3ProcessMessageBlock(int[] word){
         int[] W = new int[68];
         int[] W1 = new int [64];
         int i;
@@ -163,7 +167,7 @@ public class GmsslHash {
 
     }
 
-    private static void SM3Calculate(byte[] message){
+    private void SM3Calculate(byte[] message){
         long messageLen = message.length;
         int i;
         int[] word = new int[16];
@@ -234,7 +238,7 @@ public class GmsslHash {
         }
     }
 
-    public static String SM3Digest(byte[] message){
+    public String SM3Digest(byte[] message){
         StringBuilder result = new StringBuilder();
         SM3Calculate(message);
         for (int value : IV) {
@@ -243,40 +247,49 @@ public class GmsslHash {
         return result.toString();
     }
     public static void main(String[] args) {
-
-//        byte[] array = {0x61,0x62,0x63}; // pass
-//        byte[] array = {
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64,
-//                0x61,0x62,0x63,0x64
-//                }; // pass
-
-//        byte[] array = "abc".getBytes(); //3*8=24 pass
-//        byte[] array = "123456".getBytes(); // 6*8=48 pass
-//        byte[] array = "abcdefg".getBytes(); //7*8=56 pass
+        GmsslHash gmHash = new GmsslHash();
+//        byte[] array = "abc".getBytes(); //3*8=24bits pass
+//        byte[] array = "123456".getBytes(); // 6*8=48bits pass
+//        byte[] array = "abcdefg".getBytes(); //7*8=56bits pass
         StringBuilder s = new StringBuilder();
-        for (int i = 0; i < 2*64+56; i++) { // 55,56,57,64+55=119,64+56=120,2*64+55=183,2*64+56=184 pass
+        for (int i = 0; i < 2*64+56; i++) { // 55bits,56bits,57bits,64+55=119bits,64+56=120bits,2*64+55=183bits,2*64+56=184bits pass
             s.append(i%9);
         }
 
         System.out.println(s.toString());
         byte[] array = s.toString().getBytes();
         System.out.println("array len:"+array.length);
-        System.out.println(SM3Digest(array));
+        System.out.println(gmHash.SM3Digest(array));
 
+    }
+
+    @Test
+    public void testSample1(){ // pass
+        byte[] array = {0x61,0x62,0x63};
+        Assert.assertEquals("66c7f0f4 62eeedd9 d1f2d46b dc10e4e2 4167c487 5cf2f7a2 297da02b 8f4ba8e0".replace(" ",""),SM3Digest(array));
+    }
+
+    @Test
+    public void testSample2(){ // pass
+        byte[] array = {
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64,
+                0x61,0x62,0x63,0x64
+                };
+        Assert.assertEquals("debe9ff9 2275b8a1 38604889 c18e5a4d 6fdb70e5 387e5765 293dcba3 9c0c5732".replace(" ",""),SM3Digest(array));
     }
 }
